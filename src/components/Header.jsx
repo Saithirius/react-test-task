@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom'
 import React from 'react'
 
 const Header = () => {
-  const cartProductCount = useSelector(state => state.cart.products.length)
+  const cartProductCount = useSelector(state => state.cart.products.size)
 
   return (
     <header className="App-header">

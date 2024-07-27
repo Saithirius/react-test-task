@@ -2,21 +2,21 @@ import React from 'react'
 import styles from './CartPage.module.scss'
 import {useDispatch, useSelector} from 'react-redux'
 import ProductCard from './components/ProductCard'
-import {cartActions} from '../../store/reducers/cart'
+import {cartActions, selectCartProducts} from '../../store/reducers/cart'
 
 const CartPage = () => {
   const dispatch = useDispatch()
-  const products = useSelector(state => state.cart.products)
+  const cartProducts = useSelector(selectCartProducts)
 
-  const onRemove = (i) => {
-    dispatch(cartActions.removeProductFromInd(i))
+  const onRemove = (cartProduct) => {
+    dispatch(cartActions.removeProduct(cartProduct))
   }
 
   return (
     <main className={styles.page}>
       <h2>Корзина</h2>
       <div className={styles.productsContainer}>
-        {products.map((p, i) => <ProductCard key={i} {...p} onRemove={() => onRemove(i)}/>)}
+        {cartProducts.map((p) => <ProductCard key={JSON.stringify(p)} {...p} onRemove={() => onRemove(p)}/>)}
       </div>
     </main>
   )
