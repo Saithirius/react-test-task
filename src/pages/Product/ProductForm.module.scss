@@ -1,0 +1,20 @@
+.container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.gallery {
+  width: 300px;
+  margin: 0 auto;
+}
+
+.container form {
+  display: flex;
+  align-items: start;
+  gap: 24px;
+}
+
+.radioInput {
+  display: block;
+  cursor: pointer;
+}
