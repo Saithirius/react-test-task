@@ -1,0 +1,36 @@
+.gallery {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.mainImage img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 8px;
+}
+
+.thumbnails {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.thumbnail {
+  width: 50px;
+  max-height: 100px;
+  position: relative;
+  object-fit: contain;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: border-color 0.3s;
+}
+
+.thumbnail:hover {
+  border-color: #333;
+}
+
+.active {
+  filter: brightness(50%);
+}
