@@ -1,11 +1,14 @@
 import React from 'react'
+import Router from './Router'
+import Header from './components/Header'
 
-export default function App() {
+function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>hello there</p>
-      </header>
-    </div>
+    <>
+      <Header />
+      <Router />
+    </>
   )
 }
+
+export default App
